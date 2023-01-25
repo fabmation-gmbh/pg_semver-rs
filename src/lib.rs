@@ -1,3 +1,5 @@
+mod version;
+
 use pgx::prelude::*;
 
 pgx::pg_module_magic!();
