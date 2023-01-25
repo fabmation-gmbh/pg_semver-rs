@@ -1,13 +1,15 @@
 [package]
-name = "semver"
-version = "0.0.0"
+name = "semver-rs"
+authors = ["Emanuel Bennici <eb@fabmation.de>"]
+homepage = "https://www.fabmation.info"
+version = "0.1.0"
 edition = "2021"
 
 [lib]
 crate-type = ["cdylib"]
 
 [features]
-default = ["pg14"]
+default = ["pg15"]
 pg14 = ["pgx/pg14", "pgx-tests/pg14" ]
 pg15 = ["pgx/pg15", "pgx-tests/pg15" ]
 pg_test = []
@@ -25,7 +27,10 @@ panic = "unwind"
 lto = "thin"
 
 [profile.release]
+debug = false
+debug-assertions = false
+overflow-checks = false
 panic = "unwind"
-opt-level = 3
+opt-level = 2
 lto = "fat"
 codegen-units = 1

@@ -1,5 +1,5 @@
-comment = 'semver:  Created by pgx'
+comment = 'semver-rs: The semver extension written in Rust'
 default_version = '@CARGO_VERSION@'
-module_pathname = '$libdir/semver'
+module_pathname = '$libdir/semver-rs'
 relocatable = false
 superuser = false
