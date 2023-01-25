@@ -1,5 +1,4 @@
 mod version;
-mod range;
 
 use pgx::prelude::*;
 
