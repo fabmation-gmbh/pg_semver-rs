@@ -1,4 +1,5 @@
 use pgx::{cstr_core::CStr, StringInfo};
+use pgx::error;
 use pgx::prelude::*;
 use pgx::inoutfuncs::InOutFuncs;
 use semver::Version;
@@ -16,7 +17,10 @@ impl InOutFuncs for Semver {
             Ok(data) => data,
             Err(error) => panic!("Unable to get &str representation from &CStr: {:?}", error),
         };
-        let version = Version::parse(input_str).unwrap();
+        let version = match Version::parse(input_str) {
+            Ok(data) => data,
+            Err(err) => error!("unable to parse version: {:?}", err),
+        };
 
         Semver { version }
     }
@@ -29,9 +33,12 @@ impl InOutFuncs for Semver {
 
 #[pg_extern]
 fn to_semver(version: &str) -> Semver {
-    let raw_version = Version::parse(version).unwrap();
+    let ver = match Version::parse(version) {
+        Ok(data) => data,
+        Err(err) => error!("unable to parse version: {:?}", err),
+    };
 
     Semver{
-        version: raw_version,
+        version: ver,
     }
 }
