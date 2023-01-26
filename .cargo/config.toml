@@ -1,0 +1,3 @@
+[target.'cfg(target_os="macos")']
+# Postgres symbols will not be available until runtime
+rustflags = ["-Clink-arg=-Wl,-undefined,dynamic_lookup"]
