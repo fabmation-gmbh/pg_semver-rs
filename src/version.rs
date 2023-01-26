@@ -16,7 +16,7 @@ impl InOutFuncs for Semver {
     fn input(input: &CStr) -> Semver {
         let input_str = match input.to_str() {
             Ok(data) => data.trim(),
-            Err(error) => panic!("Unable to get &str representation from &CStr: {:?}", error),
+            Err(error) => panic!("unable to get &str representation from &CStr: {:?}", error),
         };
         let version = match Version::parse(input_str) {
             Ok(data) => data,

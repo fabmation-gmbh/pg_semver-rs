@@ -6,21 +6,9 @@ pgx::pg_module_magic!();
 
 extension_sql_file!("../sql/range.sql");
 
-#[pg_extern]
-fn hello_semver() -> &'static str {
-    "Hello, semver"
-}
-
 #[cfg(any(test, feature = "pg_test"))]
 #[pg_schema]
 mod tests {
-    use pgx::prelude::*;
-
-    #[pg_test]
-    fn test_hello_semver() {
-        assert_eq!("Hello, semver", crate::hello_semver());
-    }
-
 }
 
 #[cfg(test)]
