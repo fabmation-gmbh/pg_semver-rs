@@ -4,6 +4,8 @@ use pgx::prelude::*;
 
 pgx::pg_module_magic!();
 
+extension_sql_file!("../sql/range.sql");
+
 #[pg_extern]
 fn hello_semver() -> &'static str {
     "Hello, semver"

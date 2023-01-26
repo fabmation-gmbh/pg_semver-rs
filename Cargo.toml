@@ -1,6 +1,5 @@
 [package]
 name = "semver-rs"
-authors = ["Emanuel Bennici <eb@fabmation.de>"]
 homepage = "https://www.fabmation.info"
 version = "0.1.0"
 edition = "2021"
