@@ -12,7 +12,7 @@ Supported PostgreSQL Versions:
 ### Building from source
 
 ```bash
-~$ git clone https://github.com/fabmation-gmbh/pg-semver-rs
+~$ git clone https://github.com/fabmation-gmbh/pg_semver-rs
 ~$ cd pg-semver-rs
 ~$ cargo pgx install pg15 --release
 ```
