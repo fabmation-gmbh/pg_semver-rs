@@ -1,0 +1,46 @@
+{
+   "name": "semver-rs",
+   "abstract": "The semver extension but written in Rust",
+   "version": "0.1.0",
+   "maintainer": "Emanuel Bennici <eb@fabmation.de>",
+   "license": "MIT",
+   "provides": {
+      "pair": {
+         "abstract": "A key/value pair data type",
+         "file": "sql/_gen_full.sql",
+         "docfile": "doc/semver-rs.md",
+         "version": "0.1.0"
+      }
+   },
+   "prereqs": {
+      "runtime": {
+         "requires": {
+            "PostgreSQL": ">= 14.0.0"
+         },
+        "conflicts": {
+            "semver": ">= 0.1.0"
+        }
+      }
+   },
+   "resources": {
+      "bugtracker": {
+         "web": "https://github.com/fabmation-gmbh/pg_semver-rs/issues"
+      },
+      "repository": {
+      "url":  "git://github.com/fabmation-gmbh/pg_semver-rs.git",
+      "web":  "https://github.com/fabmation-gmbh/pg_semver-rs",
+      "type": "git"
+      }
+   },
+   "meta-spec": {
+      "version": "1.0.0",
+      "url": "https://pgxn.org/meta/spec.txt"
+   },
+   "tags": [
+      "rust",
+      "semantic version",
+      "semver",
+      "version",
+      "version number"
+   ]
+}
